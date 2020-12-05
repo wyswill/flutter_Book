@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: html提取
  * @Date: 2020-12-04 19:53:21
- * @LastEditTime: 2020-12-04 20:33:03
+ * @LastEditTime: 2020-12-05 17:14:32
  */
 import "package:html/parser.dart" show parse;
 
@@ -18,6 +18,7 @@ List<Map<String, String>> getUrlAndContent(String htmlStr, String matchStr) {
 
 String bookContent(String htmlStr) {
   var document = parse(htmlStr);
+  document.querySelector('#content p').innerHtml = '';
   dynamic content = document.querySelector('#content');
   return content.outerHtml;
 }

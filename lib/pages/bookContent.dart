@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 书内容
  * @Date: 2020-12-04 20:13:57
- * @LastEditTime: 2020-12-04 20:39:03
+ * @LastEditTime: 2020-12-05 17:16:37
  */
 
 import 'package:book/util/htmlPres.dart';
@@ -44,9 +44,10 @@ class _BookContentState extends State<BookContent> {
             customStylesBuilder: (element) {
               if (element.attributes['align'] == 'center')
                 return {'display': 'none'};
+              return {"margin": "20px 14px"};
             },
-            webView: false,
+            webView: true,
           ),
-        ));
+        )); //斗罗
   }
 }

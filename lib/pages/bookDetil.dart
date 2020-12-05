@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 书目录
  * @Date: 2020-12-04 19:39:09
- * @LastEditTime: 2020-12-04 20:18:33
+ * @LastEditTime: 2020-12-05 17:19:56
  */
 
 import 'package:book/pages/bookContent.dart';
@@ -25,9 +25,11 @@ class _BookDetilState extends State<BookDetil> {
     super.initState();
     getBookInfo(widget.bookInfo['url']).then((value) {
       setState(() {
-        allDatas = getUrlAndContent(value.data, '#list dd a');
-        newData = allDatas.sublist(0, 12);
-      });
+        List<Map<String, String>> temp =
+            getUrlAndContent(value.data, '#list dd a');
+        allDatas = temp.sublist(12, temp.length);
+        newData = temp.sublist(0, 12);
+      }); //酒神
     });
   }
 
