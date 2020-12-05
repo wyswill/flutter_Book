@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 书内容
  * @Date: 2020-12-04 20:13:57
- * @LastEditTime: 2020-12-05 17:16:37
+ * @LastEditTime: 2020-12-05 17:52:31
  */
 
 import 'package:book/util/htmlPres.dart';
@@ -28,6 +28,11 @@ class _BookContentState extends State<BookContent> {
         content = bookContent(value.data);
       });
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

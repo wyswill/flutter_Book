@@ -2,9 +2,9 @@
  * @LastEditors: wyswill
  * @Description: 文件描述
  * @Date: 2020-12-04 15:49:24
- * @LastEditTime: 2020-12-04 16:44:58
+ * @LastEditTime: 2020-12-05 18:14:29
  */
-import 'package:book/pages/serch.dart';
+import 'package:book/pages/dispatch.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: SearchPage(),
+      home: Dispatch(),
     );
   }
 }

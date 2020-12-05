@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 书目录
  * @Date: 2020-12-04 19:39:09
- * @LastEditTime: 2020-12-05 17:19:56
+ * @LastEditTime: 2020-12-05 17:52:21
  */
 
 import 'package:book/pages/bookContent.dart';
@@ -31,6 +31,11 @@ class _BookDetilState extends State<BookDetil> {
         newData = temp.sublist(0, 12);
       }); //酒神
     });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 
   @override

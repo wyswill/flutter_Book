@@ -2,7 +2,7 @@
  * @LastEditors: wyswill
  * @Description: 文件描述
  * @Date: 2020-12-04 16:43:53
- * @LastEditTime: 2020-12-04 20:39:12
+ * @LastEditTime: 2020-12-05 18:20:25
  */
 import 'package:book/pages/bookDetil.dart';
 import 'package:book/util/htmlPres.dart';
@@ -20,11 +20,20 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   TextEditingController controller = TextEditingController();
   List<Map<String, String>> serchRess = [];
+  FocusNode focusNode = FocusNode();
+
+  @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+    focusNode.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('桃酥搜书'),
+        title: Text('搜书'),
         centerTitle: true,
       ),
       body: CustomScrollView(
@@ -36,6 +45,7 @@ class _SearchPageState extends State<SearchPage> {
                   children: [
                     Expanded(
                       child: TextField(
+                        focusNode: focusNode,
                         controller: controller,
                         decoration: InputDecoration(),
                       ),
@@ -81,6 +91,7 @@ class _SearchPageState extends State<SearchPage> {
 
   jump(Map<String, String> item) {
     controller.clear();
+    focusNode.unfocus();
     Navigator.push(
       context,
       MaterialPageRoute(

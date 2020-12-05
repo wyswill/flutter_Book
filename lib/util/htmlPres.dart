@@ -2,15 +2,15 @@
  * @LastEditors: wyswill
  * @Description: html提取
  * @Date: 2020-12-04 19:53:21
- * @LastEditTime: 2020-12-05 17:14:32
+ * @LastEditTime: 2020-12-05 18:08:28
  */
 import "package:html/parser.dart" show parse;
 
 List<Map<String, String>> getUrlAndContent(String htmlStr, String matchStr) {
   var document = parse(htmlStr);
-  List a_list = document.querySelectorAll(matchStr);
+  List aList = document.querySelectorAll(matchStr);
   List<Map<String, String>> ret = [];
-  a_list.forEach((element) {
+  aList.forEach((element) {
     ret.add({"url": element.attributes['href'], "content": element.innerHtml});
   });
   return ret;
